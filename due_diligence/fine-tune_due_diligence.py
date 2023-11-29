@@ -8,20 +8,24 @@ from transformers import AutoTokenizer
 import numpy as np
 from functools import partial
 
+# init
+
+exp_name = 'ft_due_diligence_kira'
+run_name = 'topics_1086_1318'
+model_name = "bert-base-uncased"
+dataset_name = 'data_fintech/due_diligence_kira.hf'
+
+
 # loading dataset
-#data = Dataset.load_from_disk("data_fintech/due_diligence_kira_unique_clean_label_fixed.hf/").shuffle(seed=42).select(range(1000000))
-data = Dataset.load_from_disk("data_fintech/due_diligence_kira_unique_clean_label_fixed.hf/")
-#data = Dataset.load_from_disk("data_fintech/due_diligence_kira.hf/")
+data = Dataset.load_from_disk(dataset_name)
 
 
 # optional: filter dataset by topic
-data = data.filter(lambda l: True if l['topic_id'] == '1086' else False).shuffle(seed=42)
-data = data.class_encode_column("label")
+data = data.filter(lambda l: True if l['topic_id'] == '1086' or l['topic_id'] == '1318' else False).shuffle(seed=42)
 
 # split into train and test
-test_ratio = 0.001
+test_ratio = 0.01
 data = data.train_test_split(test_size=test_ratio, stratify_by_column="label")
-
 print('Num examples eval', len(data['test']))
 
 # get number of positive and negative samples for undersampling
@@ -40,7 +44,7 @@ data['train'] = datasets.concatenate_datasets([train_neg_balanced, train_pos]).s
 
 
 #loading tokenizer
-tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 # function to tokenize input
 def preprocess_function(examples):
@@ -51,7 +55,6 @@ def preprocess_function(examples):
 tokenized_data = data.map(preprocess_function, batched=True)
 
 
-model_name = "bert-base-uncased"
 # load model
 model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2)
 
@@ -81,18 +84,18 @@ train_batch_size = 32
 
 # define training arguments
 training_args = TrainingArguments(
-    output_dir="due_diligence_fine_tune",
+    output_dir=exp_name,
     learning_rate=2e-5,
     per_device_train_batch_size=train_batch_size,
     per_device_eval_batch_size=train_batch_size*2,
     #num_train_epochs=5,
-    max_steps=100000,
+    max_steps=10000,
     weight_decay=0.01,
     evaluation_strategy='steps',
-    eval_steps=1000,
+    eval_steps=200,
     save_total_limit=5,
     fp16=True,
-    run_name='due_diligence'
+    run_name=run_name
 )
 
 # define trainer
