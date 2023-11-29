@@ -1,0 +1,4 @@
+data_fintech/
+models/
+slurm/slurm-*
+wandb/

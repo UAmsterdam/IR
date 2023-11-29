@@ -10,10 +10,10 @@ from functools import partial
 
 # init
 
-exp_name = 'ft_due_diligence_kira'
-run_name = 'topics_1086_1318'
+exp_name = 'models/ft_due_diligence_kira'
+run_name = 'topics_1086'
 model_name = "bert-base-uncased"
-dataset_name = 'data_fintech/due_diligence_kira.hf'
+dataset_name = 'data_fintech/due_diligence_kira_unique.hf'
 
 
 # loading dataset
@@ -21,10 +21,10 @@ data = Dataset.load_from_disk(dataset_name)
 
 
 # optional: filter dataset by topic
-data = data.filter(lambda l: True if l['topic_id'] == '1086' or l['topic_id'] == '1318' else False).shuffle(seed=42)
+data = data.filter(lambda l: True if l['topic_id'] == '1086' else False, desc='Filtering dataset for topic.').shuffle(seed=42)
 
 # split into train and test
-test_ratio = 0.01
+test_ratio = 0.001
 data = data.train_test_split(test_size=test_ratio, stratify_by_column="label")
 print('Num examples eval', len(data['test']))
 
@@ -92,9 +92,8 @@ training_args = TrainingArguments(
     max_steps=10000,
     weight_decay=0.01,
     evaluation_strategy='steps',
-    eval_steps=200,
+    eval_steps=100,
     save_total_limit=5,
-    fp16=True,
     run_name=run_name
 )
 
