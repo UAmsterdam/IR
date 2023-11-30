@@ -19,7 +19,7 @@ from sklearn.metrics import accuracy_score, classification_report
 exp_name = 'models/ft_due_diligence_kira'
 run_name = 'topics_1439'
 #model_name = 'nlpaueb/legal-bert-base-uncased'
-model_name = "bert-base-uncased"
+model_name = "Support Vector Classifier"
 dataset_name = 'data_fintech/due_diligence_kira.hf'
 
 
