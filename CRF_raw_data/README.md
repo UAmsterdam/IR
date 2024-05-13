@@ -60,7 +60,7 @@ The \`evaluation.py\` script provides functions for evaluating model performance
 
 The \`main.py\` script orchestrates the entire pipeline from data loading to model evaluation:
 
-- Update all the paths according to your data structures like:
+Update all the paths according to your data structures like:
 - path = '../../core-tech/core/qrels/'
 - tokenizer_path = '../../core-tech/custom_punkt_tokenizer.pkl'
 - data_path  = '../../core-tech/due_dilligence_data.csv'
