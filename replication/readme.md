@@ -1,7 +1,8 @@
+## CRF Model Training and Evaluation
 
-CRF Model Training and Evaluation
+-- REPLICATED ORIGINAL PAPER CODE IN PYTHON 
 
-This project uses Conditional Random Fields (CRF) to perform sequence learning tasks. The process involves generating data folds from structured input data and then training the CRF model to evaluate the results based on precision, recall, and F1-score both at the sentence and span levels.
+In this experiment we have used Conditional Random Fields (CRF) to perform sequence learning tasks. The process involves generating data folds from structured input data and then training the CRF model to evaluate the results based on precision, recall, and F1-score both at the sentence and span levels.
 
 Requirements
 Software and Libraries
