@@ -3,7 +3,7 @@
 
 This repository contains code for training, evaluating, and testing a Conditional Random Field (CRF) model for text classification tasks. The project is structured to facilitate data loading, feature extraction, model training, and evaluation.
 
-## Project Structure
+## Code Structure
 
 - **crf_model.py**: Contains functions for training and loading the CRF model.
 - **data_loader.py**: Includes functions for loading and processing data.
