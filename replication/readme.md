@@ -1,10 +1,10 @@
-## CRF Model Training and Evaluation
+# CRF Model Training and Evaluation
 
--- REPLICATED ORIGINAL PAPER CODE IN PYTHON 
+-- REPLICATED ORIGINAL PAPER CODE IN PYTHON FOR CRFSuite (PA)
 
 In this experiment we have used Conditional Random Fields (CRF) to perform sequence learning tasks. The process involves generating data folds from structured input data and then training the CRF model to evaluate the results based on precision, recall, and F1-score both at the sentence and span levels.
 
-Requirements
+### Requirements
 Software and Libraries
 Python 3.x
 Scikit-learn
@@ -16,20 +16,20 @@ Install the required Python libraries using pip:
 pip install scikit-learn
 pip install sklearn-crfsuite
 
-Data Preparation
+### Data Preparation
 
 Get the dataset from the original authors and keep the data in the same folder.
 
-Directory Structure
+### Directory Structure
 Ensure your data is organized under a main directory (data/) with the following subdirectories and files:
 
 qrels/<topic_id>/<docid>.qrels: Label files for each document.
 docs/<docid>.<featurization>: Document files containing feature representations.
 
-Generating Data Folds
+### Generating Data Folds
 Use the provided Bash script to generate data folds. The script processes input data into a format suitable for training with CRF.
 
-Usage
+### Usage
 First, ensure the script generate_folds.sh is executable:
 
 chmod +x generate_folds.sh
@@ -40,20 +40,17 @@ Run the script by providing the path to the data directory, the topic ID, and th
 
 This command will create folds in the directory crf-tmp-<topic_id> within your main data directory.
 
-Running the Python Script
+### Running the Python Script
 After generating the data folds, use the Python script to train and evaluate the CRF models. Ensure that you configure the BASE_DIR in the Python script to point to the location of your data folds.
 
-Execute the Script
+### Execute the Script
 Run the Python script from your command line:
 
-bash
-Copy code
-python your_script_name.py
-Replace your_script_name.py with the actual name of your Python script.
+python3 main.py
 
-Output
+### Output
 The script will output precision, recall, and F1-score for each topic at both sentence and span levels, printing the results directly to the console.
 
-Notes
+## Notes
 Ensure all paths in the scripts are correctly set up according to your local environment.
 The Bash script assumes a 5-fold configuration by default; adjust this as necessary for your dataset.
