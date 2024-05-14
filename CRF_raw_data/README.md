@@ -8,7 +8,7 @@ This folder contains code for training, evaluating, and testing a Conditional Ra
 - **crf_model.py**: Contains functions for training and loading the CRF model.
 - **data_loader.py**: Includes functions for loading and processing data.
 - **evaluation.py**: Provides functions for evaluating model performance.
-- **features.py**: Defines functions for feature extraction.
+- **features.py**: Defines functions for feature extraction required for CRFSuite format.
 - **main.py**: The main script for running the entire pipeline.
 - **Notebook_version.ipynb**: Jupyter Notebook version of the main script for interactive use.
 - **test.py**: Script for testing the trained model.
