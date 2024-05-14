@@ -46,7 +46,7 @@ python main.py
 
 ### Jupyter Notebook
 
-For an interactive version of the pipeline, use the \`Notebook_version.ipynb\` notebook. This is useful for debugging, exploratory data analysis, and visualizing the performance of the model.
+For an interactive version of the pipeline, use the \`Notebook_version.ipynb\` notebook. This is useful for debugging, exploratory data analysis, and visualizing the performance of the model. In the Notebook, we have demonstrated an example training for 1 epoch. 
 
 ## License
 
