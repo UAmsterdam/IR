@@ -1,9 +1,9 @@
 
-# Deep Learning Model for Text Analysis
+# Bi-LSTM Model for Text Analysis with Attention Layer
 
-This repository contains code for training, evaluating, and testing a deep learning model for text analysis tasks using LSTM networks and an attention mechanism. The project is structured to facilitate data loading, model training, and evaluation using TensorFlow and Keras.
+This Experiment contains code for training, evaluating, and testing a deep learning model for text analysis tasks using LSTM networks and an attention mechanism. The project is structured to provide data loading, model training, and evaluation using TensorFlow and Keras.
 
-## Project Structure
+## Folder Structure
 
 - **attention.py**: Implements the attention mechanism for the LSTM model.
 - **callbacks.py**: Includes a custom callback for calculating metrics during training.
@@ -20,8 +20,6 @@ To run the code, you need the following packages installed:
 pip install tensorflow numpy pandas scikit-learn nltk
 \`\`\`
 
-## Usage
-
 ### Data Loading
 
 Data is loaded and preprocessed through the main script, which integrates the data loading functionalities necessary for preparing the input for the model.
@@ -30,14 +28,13 @@ Data is loaded and preprocessed through the main script, which integrates the da
 
 The \`train.py\` script includes functions for setting up and training the model:
 
-- \`train_evaluate_model(data, labels)\`: Handles the training and evaluation of the model.
+- \`train_evaluate_model(data, labels)\`: Handles the training and evaluation of the model. Change the training parametrrs according to your requirements.
 
 ### Evaluation
 
 The \`evaluation.py\` script provides functions for detailed evaluation of the model performance:
 
 - \`evaluate_model(model, X_test, y_test)\`: Evaluates the model on the test set.
-- \`labels_to_spans(labels)\`: Converts prediction labels to data spans for detailed analysis.
 
 ### Main Script
 
