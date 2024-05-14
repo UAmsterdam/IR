@@ -1,7 +1,7 @@
 
-# CRF Model for Text Classification
+# CRF Model for Text Classification on RAW DATA
 
-This repository contains code for training, evaluating, and testing a Conditional Random Field (CRF) model for text classification tasks. The project is structured to facilitate data loading, feature extraction, model training, and evaluation.
+This folder contains code for training, evaluating, and testing a Conditional Random Field (CRF) model for text classification tasks. The experiment is structured to facilitate data loading, feature extraction, model training, and evaluation. In this experiemnt, we have used raw sentences instead of pre-computed features(shared by Adam).
 
 ## Code Structure
 
