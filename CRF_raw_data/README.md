@@ -1,7 +1,7 @@
 
 # CRF Model for Text Classification on RAW DATA
 
-This folder contains code for training, evaluating, and testing a Conditional Random Field (CRF) model for text classification tasks. The experiment is structured to facilitate data loading, feature extraction, model training, and evaluation. In this experiemnt, we have used raw sentences instead of pre-computed features(shared by Adam).
+This folder contains code for training, evaluating, and testing a Conditional Random Field (CRF) model for text classification tasks. The experiment is structured to facilitate data loading, feature extraction, model training, and evaluation. In this experiment, we have used raw sentences instead of pre-computed features (shared by Adam).
 
 ## Code Structure
 
@@ -18,9 +18,9 @@ This folder contains code for training, evaluating, and testing a Conditional Ra
 
 To run the code, you need the following packages installed:
 
-\`\`\`bash
+```bash
 pip install pandas sklearn-crfsuite
-\`\`\`
+```
 
 ## Usage
 
@@ -66,23 +66,23 @@ Update all the paths according to your data structures like:
 - data_path  = '../../core-tech/due_dilligence_data.csv'
 - model_save_dir = 'raw_data_exp_25_04_24'
 
-\`\`\`bash
+```bash
 python main.py
-\`\`\`
+```
 
 ### Training and Testing
 
 To train the model, use the \`train.py\` script:
 
-\`\`\`bash
+```bash
 python train.py
-\`\`\`
+```
 
 To test the model, use the \`test.py\` script:
 
-\`\`\`bash
+```bash
 python test.py
-\`\`\`
+```
 
 ### Jupyter Notebook
 
