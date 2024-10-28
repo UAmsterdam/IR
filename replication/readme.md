@@ -15,10 +15,10 @@ This project replicates the original paper’s implementation of Conditional Ran
 
 Install the required Python libraries using pip:
 
-\```bash
+```bash
 pip install scikit-learn
 pip install sklearn-crfsuite
-\```
+```
 
 ### Data Preparation
 
@@ -36,15 +36,15 @@ Use the provided Bash script to generate data folds. The script processes input 
 ### Usage
 First, ensure the script `generate_folds.sh` is executable:
 
-\```bash
+```bash
 chmod +x generate_folds.sh
-\```
+```
 
 Run the script by providing the path to the data directory, the topic ID, and the featurization method:
 
-\```bash
+```bash
 ./generate_folds.sh /path/to/data 1234 features
-\```
+```
 
 This command will create folds in the directory crf-tmp-<topic_id> within your main data directory.
 
@@ -53,9 +53,9 @@ After generating the data folds, use the Python script to train and evaluate the
 
 ### Execute the Script
 Run the Python script from your command line:
-
+```bash
 python3 main.py
-
+```
 ### Output
 The script will output precision, recall, and F1-score for each topic at both sentence and span levels, printing the results directly to the console.
 
