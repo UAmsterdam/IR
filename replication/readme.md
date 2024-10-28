@@ -15,30 +15,36 @@ This project replicates the original paper’s implementation of Conditional Ran
 
 Install the required Python libraries using pip:
 
+\```bash
 pip install scikit-learn
-pip install sklearn-crfsuite 
+pip install sklearn-crfsuite
+\```
 
 ### Data Preparation
 
 Get the dataset from the original authors and keep the data in the same folder.
 
 ### Directory Structure
-Ensure your data is organized under a main directory (data/) with the following subdirectories and files:
+Ensure your data is organized under a main directory (`data/`) with the following subdirectories and files:
 
-qrels/<topic_id>/<docid>.qrels: Label files for each document.
-docs/<docid>.<featurization>: Document files containing feature representations.
+- `qrels/<topic_id>/<docid>.qrels`: Label files for each document.
+- `docs/<docid>.<featurization>`: Document files containing feature representations.
 
 ### Generating Data Folds
 Use the provided Bash script to generate data folds. The script processes input data into a format suitable for training with CRF.
 
 ### Usage
-First, ensure the script generate_folds.sh is executable:
+First, ensure the script `generate_folds.sh` is executable:
 
+\```bash
 chmod +x generate_folds.sh
+\```
 
 Run the script by providing the path to the data directory, the topic ID, and the featurization method:
 
+\```bash
 ./generate_folds.sh /path/to/data 1234 features
+\```
 
 This command will create folds in the directory crf-tmp-<topic_id> within your main data directory.
 
