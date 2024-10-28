@@ -16,7 +16,7 @@ This project replicates the original paper’s implementation of Conditional Ran
 Install the required Python libraries using pip:
 
 pip install scikit-learn
-pip install sklearn-crfsuite ```
+pip install sklearn-crfsuite 
 
 ### Data Preparation
 
