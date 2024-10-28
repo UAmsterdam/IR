@@ -1,16 +1,20 @@
 # CRF Model Training and Evaluation
 
--- REPLICATED ORIGINAL PAPER CODE IN PYTHON FOR CRFSuite (PA)
+## Overview
 
-In this experiment we have used Conditional Random Fields (CRF) to perform sequence learning tasks. The process involves generating data folds from structured input data and then training the CRF model to evaluate the results based on precision, recall, and F1-score both at the sentence and annotation levels.
+This project replicates the original paper’s implementation of Conditional Random Fields (CRF) for sequence learning tasks, translated into Python using CRFSuite. The process involves generating data folds from structured input data and training the CRF model to evaluate results based on precision, recall, and F1-score at both sentence and annotation levels.
 
-### Requirements
-Software and Libraries
-Python 3.x
-Scikit-learn
-sklearn-crfsuite
-Installing Python Libraries
+## Requirements
+
+### Software and Libraries
+- Python 3.x
+- Scikit-learn
+- sklearn-crfsuite
+
+### Installing Python Libraries
+
 Install the required Python libraries using pip:
+
 ```bash
 pip install scikit-learn
 pip install sklearn-crfsuite
