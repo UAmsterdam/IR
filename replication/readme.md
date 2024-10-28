@@ -11,8 +11,7 @@ Scikit-learn
 sklearn-crfsuite
 Installing Python Libraries
 Install the required Python libraries using pip:
-
-
+```bash
 pip install scikit-learn
 pip install sklearn-crfsuite
 
